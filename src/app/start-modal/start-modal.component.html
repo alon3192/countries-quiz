@@ -1,0 +1,15 @@
+<div class="toast" [ngClass]="hasPushed()">
+    <h3>{{ userAlert }}</h3>
+
+
+    <div class="buttons" *ngIf="!quitGameMode">
+       <button class="ok" (click)="oneMoreGameClicked()">YES</button> 
+       <button class="table" (click)="tableButtonClicked()">See The Table</button>
+    </div>
+    <div class="buttons" *ngIf="quitGameMode">
+        <button class="ok" (click)="quitChosed()">YES</button> 
+        <button class="table" (click)="continueChosed()">No</button>
+     </div>
+    
+</div>
+<div  class="disabled_screen" [ngClass]="enableScreen()"></div>

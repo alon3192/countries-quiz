@@ -1,0 +1,166 @@
+form {
+    width: 400px;
+    height: 340px;
+    left: calc(50% - 200px);
+    border: 1px black solid;
+    text-align: center;
+    margin: auto auto;
+    z-index: 3;
+    position: fixed;
+    animation-name: toast_show;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 0.5s;
+    animation-duration: 1s;
+    background: white;
+    opacity: 0; 
+}
+
+.username {
+    height: 20px;
+    width: 70%;
+    padding: 6px 6px;
+    font-family: "Acme",'Suez One', sans-serif;
+    margin-top: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+button {
+    width: 40%;
+    background: rgb(19, 174, 40);
+    padding: 7px;
+    font-size: 20px;
+    font-weight: bold;
+    border: black 2px solid;
+    margin-top: 20px;
+    font-family: 'Solway', serif;
+    box-sizing: border-box;
+    cursor: pointer;
+    box-shadow: 3px 6px #888888;
+    color: white;
+    margin: 15px;
+}
+
+
+
+.cancel {
+    background: rgb(174, 19, 19); 
+}
+
+.send:hover {
+    background: rgba(135, 174, 19, 0.671);
+}
+.send:active {
+    background: rgba(135, 174, 19, 0.671);
+    border: blue 2px solid;
+}
+
+.cancel:hover {
+    background: rgb(231, 27, 54); 
+}
+
+.cancel:active {
+    background: rgb(231, 27, 54);
+    border: blue 2px solid;
+}
+
+.toast_press_ok {
+    opacity: 1;
+    top: calc(50% - 180px);
+    animation-name: toast_disappear;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-duration: 1s;
+}
+
+.disabled_screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(100,100,100,.6);
+    z-index: 2;
+    top:0;
+    left: 0;
+    opacity: 0;
+    animation-name: disabled_screen_show;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-duration: 1s;
+}
+.enable_screen {
+    opacity: 1;
+    animation-name: enabled_screen_show;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 0.5s;
+    animation-duration: 1s;
+}
+
+@keyframes toast_show {
+
+    0% {
+        opacity: 0;
+        top: calc(40% - 180px);
+    }
+    
+   
+    100% {
+        opacity: 1;
+        top: calc(50% - 180px);
+    }  
+}
+
+@keyframes toast_disappear {
+
+    0% {
+        opacity: 1;
+        top: calc(50% - 180px);
+    }
+   
+    100% {
+        opacity: 0;
+        top: calc(40% - 180px);
+    }  
+}
+
+@keyframes disabled_screen_show {
+
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }  
+}
+@keyframes enabled_screen_show {
+
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }  
+}
+
+
+  @media(max-width : 500px) {
+    form {
+        width: 280px;
+        height: 300px;
+        font-size: 14px;
+        left: calc(50% - 140px);
+    }
+    .username {
+        margin-top: 20px;
+    }
+    .buttons {
+        margin-top: 20px;
+    }
+  }

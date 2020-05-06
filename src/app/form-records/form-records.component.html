@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" [ngClass]="hasPushed()">
+    <h2>Your score is: {{ record }}</h2>
+    <h2>Enter Your name to the User Ranking Table.</h2>
+    <input type="text"  id="username" ngModel name="username" class="username" required autofocus>
+    <div class="buttons">
+        <button class="send" type="submit">Send</button>
+        <button class="cancel" (click)="buttonClicked()" type="button">Cancel</button>
+    </div>
+</form>
+<div  class="disabled_screen" [ngClass]="enableScreen()"></div>

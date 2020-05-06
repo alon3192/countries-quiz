@@ -1,0 +1,39 @@
+.header {
+    background: silver;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.head_line {
+   text-align: center;
+    padding-top: 22px;
+}
+
+.sidebar {
+    display: block;
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 8%;
+    top: 6%;
+}
+.sidebar img {
+    width: 85%;
+    margin-top: 20%;
+}
+
+@media(max-width : 500px) {
+    .head_line {
+        display: none;
+    }
+
+    .header {
+        
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}

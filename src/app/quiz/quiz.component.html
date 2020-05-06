@@ -1,0 +1,46 @@
+
+
+<div class="quiz_container">
+   
+   <div class="x_div" (click)="quitOfQuiz()">
+   <img src="../../assets/images/x.png" alt=""> 
+   </div>
+      
+   <h2 class="question">{{ startSentence }}</h2>
+      
+   <div class="header_question">
+      <h3>{{question}}?</h3>
+      <div class="flag_header" *ngIf="!flagsFlag">
+         <img src="{{ questionFlag }}" alt="">
+      </div>
+   </div>
+
+   <div class="options">
+      <button id="option" class="option" *ngFor="let option of optionalChoices; let i=index" (click)="optionChosed(option, i)" [disabled]="userChosedMode">
+      <a class="a" [ngClass]=" defineWidthButtonByTextLength(option)" *ngIf="!flagsFlag"> {{option}}.</a>
+         
+
+      <div class="img_div" *ngIf="flagsFlag">
+         <img src="{{option}}" alt="aa" > 
+      </div>
+      </button>
+         
+         
+   </div>
+   <div class="details">
+      <h3 class="detail">Your Score: {{ score }}</h3>
+      <h3 class="detail" id="time_left">{{ minutes }} : {{ seconds }}</h3>
+      <h3 class="detail">Question #{{ counterOfQuestions }} / 50</h3>   
+   </div>
+
+   <div class="line"></div>
+   <div id="time"></div>
+      
+   
+   
+
+   <app-start-modal *ngIf="startModalMode" [userAlert]="userAlert" [quizType]="quizType"></app-start-modal>
+   <app-form-records *ngIf="recordModalMode" [quizType]="quizType" [record]="score"></app-form-records>
+      
+</div>
+
