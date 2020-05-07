@@ -90,6 +90,7 @@
     width: 100px;
     height: 60px;
     margin: 0 auto;
+    border: 1px black solid;
 }
 img {
     height: 100%;

@@ -40,9 +40,7 @@ export class QuizComponent implements OnInit, OnDestroy {
       this.flagsFlag = true;
     }
     this.dataService.fetchData(this.quizType);
-    
-  
-
+   
         this.subscription = this.dataService.okButtonPressed.subscribe(
           (premission: boolean) => {
             setTimeout(()=>{    
@@ -76,9 +74,7 @@ export class QuizComponent implements OnInit, OnDestroy {
           (premission: boolean) => {
             setTimeout(()=>{    
               this.startModalMode = false;
-
-            }, 1000);
-            
+            }, 1000); 
           });
       
   }
@@ -117,7 +113,7 @@ export class QuizComponent implements OnInit, OnDestroy {
     this.optionalChoices = this.dataService.getWrongAnswers(this.quizType);
     this.optionalChoices.push(this.answer);
     this.shuffle(this.optionalChoices);
-    this.counterOfQuestions++;
+      this.counterOfQuestions++;
     if(document.getElementById("option") !== null) {
       document.getElementById("option").classList.remove('correct_answer')
     } 
@@ -162,6 +158,7 @@ export class QuizComponent implements OnInit, OnDestroy {
     setTimeout(()=>{    
       this.nextQuestion();
         if(this.counterOfQuestions > 50) {
+          this.counterOfQuestions--;
           this.roundOver();
         }
     }, 1000);

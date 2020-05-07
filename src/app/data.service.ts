@@ -12,14 +12,17 @@ export class DataService {
   randomAnswerNumber:number
   okButtonPressed = new Subject<boolean>();
   readyModalShow = new Subject<boolean>();
-  numberOfTheOptions:number;
+  numberOfTheOptions:number = 250;
   gameContinue = new Subject<boolean>();
   quizes = ["capitals", "borders", "flags"]
   
 
   constructor(private http: HttpClient) {  }
 
+  
+
   fetchData(quizType:string) {
+
 
     this.http.get<[]>('../assets/data/data-countries.json')
     .subscribe(data => {
@@ -30,9 +33,9 @@ export class DataService {
       if(quizType === "borders") {
         this.countries = this.countries.filter(value => value.borders.length > 0) 
       }
-      if(quizType === "flags") {
+    /*  if(quizType === "flags") {
         this.countries = this.countries.filter(value => value.name !=="Svalbard and Jan Mayen")
-      }
+      }*/
       this.fetchDone.next(true); 
       this.numberOfTheOptions = this.countries.length;
     })
@@ -85,9 +88,10 @@ export class DataService {
     let regionsArray = ['Asia', 'Europe', 'Oceania', 'Africa', 'Americas']
     
     while(true) {
-      random1 = Math.floor(Math.random() * numberOfTheOptions); 
-      random2 = Math.floor(Math.random() * numberOfTheOptions); 
-      random3 = Math.floor(Math.random() * numberOfTheOptions); 
+      random1 = Math.floor(Math.random() * this.numberOfTheOptions); 
+      random2 = Math.floor(Math.random() * this.numberOfTheOptions); 
+      random3 = Math.floor(Math.random() * this.numberOfTheOptions); 
+      
 
       if(!(random1 === random2 || random1 === random3 || random2 === random3)) {
           if(!(random1 === this.randomAnswerNumber || random2 === this.randomAnswerNumber || random3 === this.randomAnswerNumber)) {
@@ -114,7 +118,7 @@ export class DataService {
             borders.push(this.searchTheWholeWord(this.countries[random3].borders[i]));
           }
           wrongAnswers.push(borders)
-          borders = [];
+          /*borders = [];*/
             }
             if(quizType === "flags") {
               wrongAnswers.push("../../assets/images/flags/" + (this.countries[random1].name)  + ".png", 
@@ -125,11 +129,11 @@ export class DataService {
               wrongAnswers.push(this.countries[random1].region, this.countries[random2].region, this.countries[random3].region)    
                 } 
           }
-          return wrongAnswers;  
-          
-        }
-        
-            
+          if(wrongAnswers.length === 3) {
+            return wrongAnswers; 
+          }
+           
+        }     
       }
       
 
@@ -157,6 +161,20 @@ export class DataService {
     getQuizes() {
     return this.quizes;
     } 
+
+    getFlagsPath(amount:number) {
+      let countries = this.countries;
+      let flagsPath = []
+      let random;
+      let imagePath;
+      for(let i=0 ; i<amount ; i++) {
+        random = Math.floor(Math.random() * this.numberOfTheOptions); 
+        imagePath = "../../assets/images/flags/" + (countries[random].name)  + ".png";
+        flagsPath.push(imagePath);
+       
+      }
+       return flagsPath;
+    }
   }
 
 

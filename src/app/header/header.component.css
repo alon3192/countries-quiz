@@ -4,13 +4,12 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    padding-left: 15%;
-    padding-right: 15%;
 }
 
 .head_line {
    text-align: center;
     padding-top: 22px;
+    margin: 0;
 }
 
 .sidebar {

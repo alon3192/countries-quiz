@@ -1,4 +1,22 @@
 <div class="home">
+
+    <div class="whole_container">
+        <div class="flags_container flag_container1">
+
+            <div class="flag_img" *ngFor="let flagPath of  flagsPath1">
+               <img  src="{{ flagPath }}" alt=""> 
+            </div>
+         </div>  
+            <h1 class="head_line">Show Your Knowledge  Of World's Countries</h1>
+
+          <div class="flags_container flag_container2">
+            <div class="flag_img" *ngFor="let flagPath of  flagsPath2">
+                <img  src="{{ flagPath }}" alt=""> 
+             </div>
+        </div>
+    </div>
+
+
     <div class="cards"> 
         <app-quiz-card *ngFor="let quiz of quizes" [quizType]="quiz"></app-quiz-card>
     </div>

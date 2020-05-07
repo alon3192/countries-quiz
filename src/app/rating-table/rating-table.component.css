@@ -40,8 +40,8 @@ table {
   }
   tr:nth-child(2) {
     background-color: rgb(119, 255, 119);
+    font-weight: bold;
   }
-
 
 .head_line {
     text-align: center;
