@@ -1,9 +1,10 @@
-.home_img_div {
-    width: 100%;
+.img {
+    background-image: url("../../assets/images/home_img.jpg");
     height: 220px;
     margin-bottom: 20px;
+    background-repeat: repeat-x;
 }
 .home_img_div img {
     height: 100%;
-    width: 100%;
+   
 }

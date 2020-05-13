@@ -1,8 +1,8 @@
 .background {
-    background-image: url("../assets/images/countries-pic.png");
+    background-image: linear-gradient(black, white);
     height: 100%;
     width: 100%;
-    opacity: 0.2;
+    opacity: 0.8;
     position: fixed;
     top: 0;
     z-index: -1;
