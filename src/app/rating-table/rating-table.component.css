@@ -7,6 +7,8 @@
     animation-duration: 2s;
     position: relative;
     animation-fill-mode: forwards;
+    margin-top: 15px;
+    
     
 }
 .img_div {
@@ -50,13 +52,11 @@ table {
 
 @keyframes show_table {
    from {
-       top: -500px;
        opacity: 0;
        
    }
    to {
-       top: 15px;
-       opacity: 1;    
+       opacity: 1;  
    }
 }
 

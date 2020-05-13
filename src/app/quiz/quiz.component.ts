@@ -21,7 +21,7 @@ export class QuizComponent implements OnInit, OnDestroy {
 
   minutes;
   seconds;
-  timeLeft:number = 4 * 60;
+  timeLeft:number = 1.5 * 60;
   intervel;
   startModalMode:boolean = true;
   recordModalMode:boolean = false;
@@ -34,8 +34,8 @@ export class QuizComponent implements OnInit, OnDestroy {
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
-    this.minutes = "04"
-    this.seconds = "00"
+    this.minutes = "01"
+    this.seconds = "30"
     if(this.quizType === 'flags') {
       this.flagsFlag = true;
     }
@@ -48,9 +48,9 @@ export class QuizComponent implements OnInit, OnDestroy {
               this.startModalMode = false;
               this.score = 0;
               this.counterOfQuestions = 0;
-              this.minutes = "04";
-              this.seconds = "00";
-              this.timeLeft = 4 * 60;
+              this.minutes = "01";
+              this.seconds = "30";
+              this.timeLeft = 1.5 * 60;
               clearInterval(this.intervel) 
               this.countdownBegin();
               this.nextQuestion();
@@ -157,10 +157,6 @@ export class QuizComponent implements OnInit, OnDestroy {
 
     setTimeout(()=>{    
       this.nextQuestion();
-        if(this.counterOfQuestions > 50) {
-          this.counterOfQuestions--;
-          this.roundOver();
-        }
     }, 1000);
         
   }

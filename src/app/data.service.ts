@@ -14,7 +14,7 @@ export class DataService {
   readyModalShow = new Subject<boolean>();
   numberOfTheOptions:number = 250;
   gameContinue = new Subject<boolean>();
-  quizes = ["capitals", "borders", "flags"]
+  quizes = ["capitals", "borders", "flags"];
   
 
   constructor(private http: HttpClient) {  }
@@ -83,9 +83,8 @@ export class DataService {
     let random1
     let random2
     let random3
-    let numberOfTheOptions = this.numberOfTheOptions;
-    
-    let regionsArray = ['Asia', 'Europe', 'Oceania', 'Africa', 'Americas']
+    /*let numberOfTheOptions = this.numberOfTheOptions; 
+    let regionsArray = ['Asia', 'Europe', 'Oceania', 'Africa', 'Americas']*/
     
     while(true) {
       random1 = Math.floor(Math.random() * this.numberOfTheOptions); 
@@ -118,7 +117,6 @@ export class DataService {
             borders.push(this.searchTheWholeWord(this.countries[random3].borders[i]));
           }
           wrongAnswers.push(borders)
-          /*borders = [];*/
             }
             if(quizType === "flags") {
               wrongAnswers.push("../../assets/images/flags/" + (this.countries[random1].name)  + ".png", 
@@ -131,8 +129,7 @@ export class DataService {
           }
           if(wrongAnswers.length === 3) {
             return wrongAnswers; 
-          }
-           
+          }     
         }     
       }
       
@@ -170,8 +167,7 @@ export class DataService {
       for(let i=0 ; i<amount ; i++) {
         random = Math.floor(Math.random() * this.numberOfTheOptions); 
         imagePath = "../../assets/images/flags/" + (countries[random].name)  + ".png";
-        flagsPath.push(imagePath);
-       
+        flagsPath.push(imagePath);  
       }
        return flagsPath;
     }
