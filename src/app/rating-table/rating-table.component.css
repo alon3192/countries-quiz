@@ -7,9 +7,7 @@
     animation-duration: 2s;
     position: relative;
     animation-fill-mode: forwards;
-    margin-top: 15px;
-    
-    
+    margin-top: 15px; 
 }
 .img_div {
   width: 40px;
@@ -28,6 +26,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    font-family: 'Balsamiq Sans', cursive;
   }
   
   td, th {
@@ -47,7 +46,10 @@ table {
 
 .head_line {
     text-align: center;
-    text-transform: uppercase;
+    font-family: 'Balsamiq Sans', cursive;
+}
+.head_line::first-letter {
+  text-transform: uppercase;
 }
 
 @keyframes show_table {

@@ -162,12 +162,12 @@ export class QuizComponent implements OnInit, OnDestroy {
   }
 
   roundOver() {
-    this.userAlert = "Do u wanna play another round?"
+    this.userAlert = "Do u want to play another round?"
     this.recordModalMode = true;
     clearInterval(this.intervel);
   }
   quitOfQuiz() {
-    this.userAlert = "Are you sure u wanna quit the game?"
+    this.userAlert = "Are you sure u want to quit the game?"
     this.startModalMode = true;
   }
 

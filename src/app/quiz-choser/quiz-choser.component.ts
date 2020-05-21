@@ -18,16 +18,16 @@ export class QuizChoserComponent implements OnInit {
     
 
     if(this.quizType === 'capitals') {
-      this.startSentence = "Answer what is the capital of";
+      this.startSentence = "what is the capital of";
     }
     if(this.quizType === 'borders') {
-      this.startSentence = "Answer what are the borders of"
+      this.startSentence = "what are the borders of"
     }
     if(this.quizType === 'flags') {
-      this.startSentence = "Answer what is the flag of"
+      this.startSentence = "what is the flag of"
     }
     if(this.quizType === 'regions') {
-      this.startSentence = "Answer what is the region of"
+      this.startSentence = "what is the region of"
     }
 
 

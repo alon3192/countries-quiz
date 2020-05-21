@@ -15,6 +15,7 @@
     font-family: 'Solway', serif;
     padding: 7px;
     opacity: 0;   
+    font-family: 'Balsamiq Sans', cursive;
 }
 .toast_press_ok {
     opacity: 1;
@@ -50,6 +51,7 @@ button {
     box-shadow: 3px 6px #888888;
     color: white;
     margin: 15px;
+    font-family: 'Balsamiq Sans', cursive;
 }
 .table {
     background: rgb(174, 19, 19); 
@@ -150,9 +152,34 @@ button {
         height: 150px;
         left: 2%;
         box-sizing: border-box;
-    }
-    /*button {
-        font-size: 14px;
-    }*/
-    
+    }   
 }
+
+@media(max-width : 400px) {
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .toast {
+        height: 120px;
+    } 
+    
+   button {
+       font-size: 13px;
+   }  
+}
+
+@media(max-width : 300px) {
+    
+   button {
+       font-size: 11px;
+   }  
+}
+
+@media(max-width : 270px) {
+    
+    .toast {
+        height: 140px;
+    } 
+ }

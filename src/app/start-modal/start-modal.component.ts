@@ -17,7 +17,7 @@ export class StartModalComponent implements OnInit {
   constructor(private dataService:DataService, private router:Router, private route:ActivatedRoute) { }
 
   ngOnInit() {
-    if(this.userAlert === 'Are you sure u wanna quit the game?') {
+    if(this.userAlert === 'Are you sure u want to quit the game?') {
       this.quitGameMode = true;
     }
   

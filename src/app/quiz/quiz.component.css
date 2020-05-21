@@ -6,6 +6,7 @@
     margin: auto auto;
     position: relative;
     margin-top: 15px;
+    font-family: 'Balsamiq Sans', cursive;
 }
     
 
@@ -65,6 +66,7 @@
     word-wrap: break-word;
     font-family: 'PT Sans', sans-serif; 
     background: white;
+    font-family: 'Balsamiq Sans', cursive;
 }
 .a {
     margin-top: 15px;
