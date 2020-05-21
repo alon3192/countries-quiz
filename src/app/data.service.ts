@@ -27,15 +27,15 @@ export class DataService {
     this.http.get<[]>('../assets/data/data-countries.json')
     .subscribe(data => {
       this.countries = data;
+      
+      this.countries = this.countries.filter(value => value.alpha2Code !== 'PS');
       if(quizType === "capitals") {
         this.countries = this.countries.filter(value => value.capital.length > 0) 
       }
       if(quizType === "borders") {
         this.countries = this.countries.filter(value => value.borders.length > 0) 
       }
-    /*  if(quizType === "flags") {
-        this.countries = this.countries.filter(value => value.name !=="Svalbard and Jan Mayen")
-      }*/
+
       this.fetchDone.next(true); 
       this.numberOfTheOptions = this.countries.length;
     })
