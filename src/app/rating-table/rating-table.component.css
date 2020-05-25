@@ -3,10 +3,7 @@
     position: relative;
     background: white;
     padding: 20px;
-    animation-name: show_table;
-    animation-duration: 2s;
     position: relative;
-    animation-fill-mode: forwards;
     margin-top: 15px; 
 }
 .img_div {
@@ -27,6 +24,9 @@ table {
     border-collapse: collapse;
     width: 100%;
     font-family: 'Balsamiq Sans', cursive;
+    animation-name: show_table;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
   }
   
   td, th {
@@ -53,12 +53,14 @@ table {
 }
 
 @keyframes show_table {
-   from {
-       opacity: 0;
-       
+   0% {
+    background: transparent;    
    }
-   to {
-       opacity: 1;  
+   50% {
+     background: rgb(209, 197, 21);
+   }
+   100% {
+     background: white;
    }
 }
 

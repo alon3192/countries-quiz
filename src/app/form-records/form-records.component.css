@@ -20,7 +20,7 @@ form {
     height: 20px;
     width: 70%;
     padding: 6px 6px;
-    font-family: "Acme",'Suez One', sans-serif;
+    font-family: 'Balsamiq Sans', cursive;
     margin-top: 30px;
 }
 
@@ -44,6 +44,7 @@ button {
     box-shadow: 3px 6px #888888;
     color: white;
     margin: 15px;
+    font-family: 'Balsamiq Sans', cursive;
 }
 
 

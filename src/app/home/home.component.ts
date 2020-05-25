@@ -8,14 +8,13 @@ import { Subscription } from 'rxjs';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit {
 
   constructor(private dataService:DataService) { }
 
   quizes = [];
   subscription:Subscription
-  flagsPath1 = [];
-  flagsPath2 = [];
+
 
 
   ngOnInit() {
@@ -23,17 +22,9 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.quizes = this.dataService.getQuizes();
     
 
-   
-    this.subscription = this.dataService.fetchDone.subscribe(
-      (premission: boolean) => {
-        
-        this.flagsPath1 = this.dataService.getFlagsPath(50)
-        this.flagsPath2 = this.dataService.getFlagsPath(50)
-      });
-      }
-      ngOnDestroy() {
-        this.subscription.unsubscribe();
-      }
+  }
+
+
 }
 
 
